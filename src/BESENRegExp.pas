@@ -87,7 +87,9 @@ type TBESENRegExpOpcode=byte;
        Lo,Hi:TBESENUTF32CHAR;
        constructor Create(ACharClass:TBESENRegExpCharClass;ALo,AHi:TBESENUTF32CHAR);
        constructor CreateBefore(ACharClass:TBESENRegExpCharClass;ABefore:TBESENRegExpCharClassRange;ALo,AHi:TBESENUTF32CHAR);
+{evisions - Not used and causes compiler warning for C++
        constructor CreateAfter(ACharClass:TBESENRegExpCharClass;AAfter:TBESENRegExpCharClassRange;ALo,AHi:TBESENUTF32CHAR);
+end-evisions}
        destructor Destroy; override;
      end;
 
@@ -225,6 +227,7 @@ begin
  end;
 end;
 
+{evisions - Not used and causes compiler warning for C++
 constructor TBESENRegExpCharClassRange.CreateAfter(ACharClass:TBESENRegExpCharClass;AAfter:TBESENRegExpCharClassRange;ALo,AHi:TBESENUTF32CHAR);
 begin
  inherited Create;
@@ -240,6 +243,7 @@ begin
   CharClass.Last:=self;
  end;
 end;
+end-evisions}
 
 destructor TBESENRegExpCharClassRange.Destroy;
 begin
