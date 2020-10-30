@@ -159,7 +159,7 @@ procedure BESENThrowCaller;
 procedure BESENThrowTypeErrorDeclarationBindingInstantiationAtFunctionBinding(const fn:TBESENString);
 procedure BESENThrowTypeErrorNotAConstructorObject;
 procedure BESENThrowTypeErrorObjectHasNoConstruct;
-procedure BESENThrowTypeErrorNotAFunction;
+procedure BESENThrowTypeErrorNotAFunction(name : string); //evisions
 procedure BESENThrowTypeErrorNotCallable;
 
 implementation
@@ -617,9 +617,9 @@ begin
  BESENThrowTypeError('Object has no construct');
 end;
 
-procedure BESENThrowTypeErrorNotAFunction;
+procedure BESENThrowTypeErrorNotAFunction(name : string); //evisions
 begin
- BESENThrowTypeError('Not a function');
+ BESENThrowTypeError(name + ' not a function'); //evisions
 end;
 
 procedure BESENThrowTypeErrorNotCallable;

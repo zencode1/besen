@@ -885,7 +885,7 @@ begin
    ParamArgs[Counter]:=@RegisterValues[Operands^[Counter+4]];
   end;
   if Func^.ValueType<>bvtOBJECT then begin
-   BESENThrowTypeErrorNotAFunction;
+   BESENThrowTypeErrorNotAFunction(Func^.Str); // evisions
   end else if not (assigned(Func^.Obj) and TBESENObject(Func^.Obj).HasCall) then begin
    BESENThrowTypeErrorNotCallable;
   end;
@@ -3023,7 +3023,7 @@ begin
    ParamArgs[Counter]:=@RegisterValues[Operands^[Counter+4]];
   end;
   if Func^.ValueType<>bvtOBJECT then begin
-   BESENThrowTypeErrorNotAFunction;
+   BESENThrowTypeErrorNotAFunction(Func^.Str); // evisions
   end else if not (assigned(Func^.Obj) and TBESENObject(Func^.Obj).HasCall) then begin
    BESENThrowTypeErrorNotCallable;
   end;
